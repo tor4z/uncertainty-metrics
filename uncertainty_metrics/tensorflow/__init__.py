@@ -22,6 +22,7 @@ from uncertainty_metrics.tensorflow import information_criteria
 from uncertainty_metrics.tensorflow import scoring_rules
 from uncertainty_metrics.tensorflow.accuracy import OracleCollaborativeAccuracy
 from uncertainty_metrics.tensorflow.auc import AUC
+from uncertainty_metrics.tensorflow.accuracy import OracleCollaborativeAccuracy
 from uncertainty_metrics.tensorflow.calibration import bayesian_expected_calibration_error
 from uncertainty_metrics.tensorflow.calibration import ExpectedCalibrationError
 from uncertainty_metrics.tensorflow.diversity import average_pairwise_diversity
