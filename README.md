@@ -3,16 +3,19 @@ The goal of this library is to provide an easy-to-use interface for measuring un
 
 Machine learning models often produce incorrect (over or under confident) probabilities. In real-world decision making systems, classification models must not only be accurate, but also should indicate when they are likely to be incorrect. For example, one important property is calibration: the idea that a model's predicted probabilities of outcomes reflect true probabilities of those outcomes. Intuitively, for class predictions, calibration means that if a model assigns a class with 90% probability, that class should appear 90% of the time.
 
-## Installation
+Add pytorch support by tor4z.
 
-```sh
-pip install uncertainty_metrics
-```
+## TODO
+
+- Update torch unit test code
+- To implement torch.AUC class
+
+## Installation
 
 To install the latest development version, run
 
 ```sh
-pip install "git+https://github.com/google/uncertainty_metrics.git#egg=uncertainty_metrics"
+pip install "git+https://github.com/tor4z/uncertainty_metrics.git#egg=uncertainty_metrics"
 ```
 
 There is not yet a stable version (nor an official release of this library).

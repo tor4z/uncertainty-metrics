@@ -17,7 +17,7 @@ setup(
     description='Uncertainty Metrics',
     author='Uncertainty Metrics Team',
     author_email='jeremynixon@google.com',
-    url='http://github.com/google/uncertainty_metrics',
+    url='http://github.com/tor4z/uncertainty_metrics',
     license='Apache 2.0',
     packages=find_packages(),
     install_requires=['numpy>=1.7'],
