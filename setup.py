@@ -27,6 +27,7 @@ setup(
                   'scikit-learn>=0.20.0'],
         'tensorflow': ['tensorflow>=2.0.0',
                        'tensorflow_probability>=0.9'],
+        'torch': ['torch>=1.6.0'],
         'tf-nightly': ['tf-nightly',
                        'matplotlib>=2.0.0',
                        'scipy>=1.0.0',

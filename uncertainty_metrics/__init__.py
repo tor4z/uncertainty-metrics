@@ -16,30 +16,46 @@
 """Uncertainty Metrics."""
 
 import warnings
+
 # pylint: disable=g-import-not-at-top
 try:
-  from uncertainty_metrics import numpy
-  __all__ = ["numpy"]
+    from uncertainty_metrics import numpy
+
+    __all__ = ["numpy"]
 except ImportError:
-  __all__ = []
-  warnings.warn("NumPy backend for Uncertainty Merics is not available.")
+    __all__ = []
+    warnings.warn("NumPy backend for Uncertainty Merics is not available.")
 
 try:
-  from uncertainty_metrics import tensorflow
-  from uncertainty_metrics.tensorflow import *
-  # By default, `import uncertainty_metrics as um` uses the TensorFlow backend's
-  # namespace.
-  __all__ += tensorflow.__all__ + ["tensorflow"]
+    from uncertainty_metrics import tensorflow
+
+    # from uncertainty_metrics.tensorflow import *
+    # By default, `import uncertainty_metrics as um` uses the TensorFlow backend's
+    # namespace.
+    __all__ += ["tensorflow"]
 except ImportError:
-  warnings.warn("TensorFlow backend for Uncertainty Merics is not available.")
+    warnings.warn("TensorFlow backend for Uncertainty Merics is not available.")
 
 try:
-  numpy
+    from uncertainty_metrics import torch
+    from uncertainty_metrics.torch import *
+
+    # By default, `import uncertainty_metrics as um` uses the TensorFlow backend's
+    # namespace.
+    __all__ += torch.__all__ + ["torch"]
+except ImportError:
+    warnings.warn("pytorch backend for Uncertainty Merics is not available.")
+
+try:
+    numpy
 except NameError:
-  try:
-    tensorflow
-  except NameError:
-    raise ImportError("Neither NumPy nor TensorFlow backends are available for "
-                      "Uncertainty Metrics. Please install the dependencies "
-                      "for either of them.")
+    try:
+        tensorflow
+    except NameError:
+        try:
+            torch
+        except ImportError:
+            raise ImportError("Neither NumPy, TensorFlow or pytorch backends are available for "
+                              "Uncertainty Metrics. Please install the dependencies "
+                              "for either of them.")
 # pylint: enable=g-import-not-at-top
